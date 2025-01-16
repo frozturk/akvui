@@ -42,6 +42,7 @@ export function EditSecretModal({
           <button
             onClick={onClose}
             className="text-gray-400 hover:text-gray-500 dark:text-gray-400 dark:hover:text-gray-300"
+            aria-label="Close modal"
           >
             <svg className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
@@ -50,8 +51,11 @@ export function EditSecretModal({
         </div>
         <form onSubmit={handleSave} className="space-y-6">
           <div>
-            <label className="block text-sm font-medium text-gray-900 dark:text-gray-200">Secret Name</label>
+            <label htmlFor="secretName" className="block text-sm font-medium text-gray-900 dark:text-gray-200">
+              Secret Name
+            </label>
             <input
+              id="secretName"
               type="text"
               value={editModal.secret.name}
               className="mt-1 block w-full rounded-md shadow-sm
@@ -61,8 +65,11 @@ export function EditSecretModal({
             />
           </div>
           <div>
-            <label className="block text-sm font-medium text-gray-900 dark:text-gray-200">Secret Value</label>
+            <label htmlFor="secretValue" className="block text-sm font-medium text-gray-900 dark:text-gray-200">
+              Secret Value
+            </label>
             <input
+              id="secretValue"
               type="text"
               value={editModal.secret.value}
               onChange={(e) => onValueChange(e.target.value)}

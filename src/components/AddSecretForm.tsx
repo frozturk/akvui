@@ -41,8 +41,11 @@ export function AddSecretForm({
       <h2 className="text-xl font-semibold mb-4 text-gray-900 dark:text-white">Add New Secret</h2>
       <form onSubmit={addSecret} className="space-y-4">
         <div>
-          <label className="block text-sm font-medium text-gray-900 dark:text-gray-200">Secret Name</label>
+          <label htmlFor="secretName" className="block text-sm font-medium text-gray-900 dark:text-gray-200">
+            Secret Name
+          </label>
           <input
+            id="secretName"
             type="text"
             value={newSecret.name}
             onChange={(e) => setNewSecret({ ...newSecret, name: e.target.value })}
@@ -55,8 +58,11 @@ export function AddSecretForm({
           />
         </div>
         <div>
-          <label className="block text-sm font-medium text-gray-900 dark:text-gray-200">Secret Value</label>
+          <label htmlFor="secretValue" className="block text-sm font-medium text-gray-900 dark:text-gray-200">
+            Secret Value
+          </label>
           <input
+            id="secretValue"
             type="text"
             value={newSecret.value}
             onChange={(e) => setNewSecret({ ...newSecret, value: e.target.value })}
