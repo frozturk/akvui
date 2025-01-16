@@ -1,6 +1,7 @@
 # Azure Key Vault Secrets Manager
 
 ![build](https://github.com/frozturk/akvui/actions/workflows/build.yml/badge.svg)
+![test](https://github.com/frozturk/akvui/actions/workflows/test.yml/badge.svg)
 
 A modern web application for managing secrets in Azure Key Vault. Built with Next.js, TypeScript, and Tailwind CSS.
 This work and following readme is created with the help of Cursor AI.
