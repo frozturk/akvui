@@ -44,6 +44,36 @@ npm run dev
 
 5. Open [http://localhost:3000](http://localhost:3000) in your browser
 
+## Docker
+
+You can run the application using Docker:
+
+1. Create a `.env.docker` file with your Azure credentials:
+```bash
+AZURE_TENANT_ID=your-tenant-id
+AZURE_CLIENT_ID=your-client-id
+AZURE_CLIENT_SECRET=your-client-secret
+```
+
+2. Build and run using Docker Compose:
+```bash
+docker-compose up --build
+```
+
+3. Access the application at [http://localhost:3000](http://localhost:3000)
+
+### Running with Docker manually
+
+Alternatively, you can use Docker directly:
+
+```bash
+# Build the image
+docker build -t akvui .
+
+# Run the container
+docker run -p 3000:3000 --env-file .env.docker akvui
+```
+
 ## Usage
 
 1. Add a Key Vault:
