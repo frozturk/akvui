@@ -1,0 +1,19 @@
+version: '3.8'
+
+services:
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "3000:3000"
+    environment:
+      - NODE_ENV=production
+      # Azure authentication variables
+      - AZURE_TENANT_ID=${AZURE_TENANT_ID}
+      - AZURE_CLIENT_ID=${AZURE_CLIENT_ID}
+      - AZURE_CLIENT_SECRET=${AZURE_CLIENT_SECRET}
+      # Optional: If using managed identity
+      - AZURE_MANAGED_IDENTITY_CLIENT_ID=${AZURE_MANAGED_IDENTITY_CLIENT_ID}
+    env_file:
+      - .env.docker
